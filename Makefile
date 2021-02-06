@@ -36,9 +36,6 @@ OPT_FLUGS = -O -g3
 
 all: $(NAME)
 
-la:
-	echo $(SRC_PATH)
-
 $(NAME): $(OBJ_PATH)
 	ar rcs $(NAME) $?
 
@@ -48,6 +45,8 @@ $(OBJ_DIR)%.o: %.c
 	gcc $(CFLAGS) $(OPT_FLUGS) -c $< -o $@ -MD -I$(INC_DIR)
 
 include	$(wildcard $(D_PATH))
+
+print-%: ; @echo $*=$($*)
 
 clean:
 	rm -f $(OBJ_PATH) $(D_PATH)
