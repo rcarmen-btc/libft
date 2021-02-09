@@ -38,6 +38,7 @@ char **rema_pr_li, char *tmp)
 	tmp = ft_strdup(*rema_pr_li + distance_to_n);
 	ft_memdel(rema_pr_li);
 	*rema_pr_li = tmp;
+	ft_memdel(&tmp);
 	return (1);
 }
 
@@ -51,6 +52,7 @@ int					get_next_line(int fd, char **line)
 	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
 		return (-1);
 	rs = 1;
+	tmp = NULL;
 	if (NULL == remain_pre_line)
 		remain_pre_line = ft_strnew(1);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -58,6 +60,7 @@ int					get_next_line(int fd, char **line)
 	(rs = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		*(buf + rs) = '\0';
+		
 		tmp = ft_strjoin(remain_pre_line, buf);
 		ft_memdel(&remain_pre_line);
 		remain_pre_line = tmp;

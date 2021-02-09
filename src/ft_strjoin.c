@@ -18,9 +18,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	size_t				i;
 	char				*mem;
 
-	if (!(mem = (char *)malloc(ft_strlen(s1)
-		+ ft_strlen(s2) + 1)))
-		return (NULL);
 	i = 0;
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(mem = (char *)malloc(sizeof(char) * len)))
@@ -32,3 +29,4 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	mem[i] = '\0';
 	return (mem);
 }
+
