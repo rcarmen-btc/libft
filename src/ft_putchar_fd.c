@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:23:54 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 17:13:03 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:33:25 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void			ft_utf_4(int unicode, int fd)
+static void	ft_utf_4(int unicode, int fd)
 {
 	int				ws;
 	unsigned char	buf;
@@ -28,7 +28,7 @@ static void			ft_utf_4(int unicode, int fd)
 	(void)ws;
 }
 
-static void			ft_utf_3(int unicode, int fd)
+static void	ft_utf_3(int unicode, int fd)
 {
 	int				ws;
 	unsigned char	buf;
@@ -42,7 +42,7 @@ static void			ft_utf_3(int unicode, int fd)
 	(void)ws;
 }
 
-static void			ft_utf_2(int unicode, int fd)
+static void	ft_utf_2(int unicode, int fd)
 {
 	int				ws;
 	unsigned char	buf;
@@ -54,7 +54,7 @@ static void			ft_utf_2(int unicode, int fd)
 	(void)ws;
 }
 
-static void			ft_utf_1(char unicode, int fd)
+static void	ft_utf_1(char unicode, int fd)
 {
 	int				ws;
 
@@ -62,7 +62,7 @@ static void			ft_utf_1(char unicode, int fd)
 	(void)ws;
 }
 
-void				ft_putchar_fd(int unicode, int fd)
+void	ft_putchar_fd(int unicode, int fd)
 {
 	int				ws;
 

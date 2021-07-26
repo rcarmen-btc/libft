@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 14:58:26 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:02 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/07/10 00:27:14 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *np)
+int	ft_atoi(const char *np)
 {
 	int				sign;
 	int				res;
@@ -22,7 +22,8 @@ int			ft_atoi(const char *np)
 	while (ft_isspace(*np))
 		np++;
 	if (*np == '-' || *np == '+')
-		sign = *np++ == '-' ? -1 : 1;
+		if (*np++ == '-')
+			sign = -1;
 	while (ft_isdigit(*np))
 		res = (res * 10) + (*np++ - '0');
 	return (res * sign);

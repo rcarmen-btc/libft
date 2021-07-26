@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:30:30 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:54 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:32:17 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *a, int c, size_t n)
 {
-	unsigned char *a_ptr;
+	unsigned char	*a_ptr;
 
 	a_ptr = (unsigned char *)a;
 	while (n-- > 0)

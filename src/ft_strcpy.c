@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 23:35:30 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:59:30 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:39:35 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])

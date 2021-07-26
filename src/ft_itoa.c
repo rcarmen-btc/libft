@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:49:01 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:31 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:27:56 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	get_nbr_cnt(int n)
 {
-	size_t nbr_cnt;
+	size_t	nbr_cnt;
 
 	if (n == 0)
 		return (1);
@@ -29,7 +29,7 @@ static size_t	get_nbr_cnt(int n)
 	return (nbr_cnt);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t		nbr_cnt;
 	char		*nbr_str;

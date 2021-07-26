@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:45:31 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 17:15:58 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:47:23 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_ha_rem_li(ssize_t rs, char **line,
+static int	ft_ha_rem_li(ssize_t rs, char **line,
 char **rema_pr_li, char *tmp)
 {
 	size_t			distance_to_n;
@@ -38,11 +38,10 @@ char **rema_pr_li, char *tmp)
 	tmp = ft_strdup(*rema_pr_li + distance_to_n);
 	ft_memdel(rema_pr_li);
 	*rema_pr_li = tmp;
-	ft_memdel(&tmp);
 	return (1);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	ssize_t			rs;
 	char			*tmp;
@@ -56,11 +55,10 @@ int					get_next_line(int fd, char **line)
 	if (NULL == remain_pre_line)
 		remain_pre_line = ft_strnew(1);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	while (ft_strchr(remain_pre_line, '\n') == 0 &&
-	(rs = read(fd, buf, BUFFER_SIZE)) > 0)
+	rs = read(fd, buf, BUFFER_SIZE);
+	while (ft_strchr(remain_pre_line, '\n') == 0 && rs > 0)
 	{
 		*(buf + rs) = '\0';
-		
 		tmp = ft_strjoin(remain_pre_line, buf);
 		ft_memdel(&remain_pre_line);
 		remain_pre_line = tmp;

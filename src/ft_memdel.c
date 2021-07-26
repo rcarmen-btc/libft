@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:32:04 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:58 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:32:41 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_memdel(char **ptr)
+int	ft_memdel(char **ptr)
 {
 	if (*ptr != 0)
 	{

@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:30:46 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/01/24 23:14:18 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:39:13 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void			arr_free(char **arr)
+static void	arr_free(char **arr)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ static void			arr_free(char **arr)
 	free(arr);
 }
 
-static size_t		get_wrd_cnt(char const *s, char c)
+static size_t	get_wrd_cnt(char const *s, char c)
 {
 	size_t		wrd_cnt;
 	size_t		is;
@@ -48,7 +48,7 @@ static size_t		get_wrd_cnt(char const *s, char c)
 	return (wrd_cnt);
 }
 
-static size_t		get_lttr_cnt(char const *s, char c)
+static size_t	get_lttr_cnt(char const *s, char c)
 {
 	size_t	lttr_cnt;
 
@@ -58,7 +58,10 @@ static size_t		get_lttr_cnt(char const *s, char c)
 	return (lttr_cnt);
 }
 
-static char			**get_arr_split(char **arr, char const *s, char c)
+/*
+ *i++;
+ */
+static char	**get_arr_split(char **arr, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -72,7 +75,8 @@ static char			**get_arr_split(char **arr, char const *s, char c)
 		while (*s != '\0' && *s == c)
 			s++;
 		lttr_cnt = get_lttr_cnt(s, c);
-		if (!(arr[i] = (char *)malloc(sizeof(char) * (lttr_cnt + 1))))
+		arr[i] = (char *)malloc(sizeof(char) * (lttr_cnt + 1));
+		if (!arr[i])
 		{
 			arr_free(arr);
 			return (NULL);
@@ -80,18 +84,18 @@ static char			**get_arr_split(char **arr, char const *s, char c)
 		j = 0;
 		while (j < lttr_cnt)
 			arr[i][j++] = *s++;
-		arr[i][j] = '\0';
-		i++;
+		arr[i++][j] = '\0';
 	}
 	arr[i] = NULL;
 	return (arr);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
-	if (!(arr = (char **)malloc(sizeof(char *) * (get_wrd_cnt(s, c) + 1))))
+	arr = (char **)malloc(sizeof(char *) * (get_wrd_cnt(s, c) + 1));
+	if (!arr)
 		return (NULL);
 	return (get_arr_split(arr, s, c));
 }

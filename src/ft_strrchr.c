@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:31:22 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:59:53 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:42:33 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == c)
-		return ((char*)s + i);
+		return ((char *)s + i);
 	else if (is)
-		return ((char*)s + th);
+		return ((char *)s + th);
 	else
 		return (NULL);
 }

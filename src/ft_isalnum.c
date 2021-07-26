@@ -6,13 +6,14 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:00:24 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:20 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:26:25 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	return (((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123)));
+	return (((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') \
+	|| (c >= 'a' && c <= 'z')));
 }

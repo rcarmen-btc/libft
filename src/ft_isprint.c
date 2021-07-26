@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:48:55 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:26 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:26:50 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return ((c > 31 && c < 127));
 }

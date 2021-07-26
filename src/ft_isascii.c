@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:48:41 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:23 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:26:40 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return ((c > -1 && c < 128));
 }

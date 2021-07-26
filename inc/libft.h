@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:32:04 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 19:06:50 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/26 07:22:43 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4096
 # endif
 
 # ifndef IS_LINUX
-#  define IS_LINUX 0
+#  define IS_LINUX 1
 # endif
 
 # ifndef NULL_SIZE
@@ -33,64 +32,46 @@
 # define UTF8_3 0xFFFF
 # define UTF8_4 0x1FFFFF
 
-typedef enum	e_type_mods
-{
-	no_type = 0b00000000,
-	character = 0b00000001,
-	string = 0b00000010,
-	digit = 0b00000100,
-	integer = 0b00001000,
-	unsig = 0b00010000,
-	hex = 0b00100000,
-	upper_hex = 0b01000000,
-	percent = 0b00000011,
-	pointer = 0b00000111
-}				t_type_mods;
-
-typedef enum	e_flags
-{
-	none = 0b00000000,
-	zero = 0b00000001,
-	minus = 0b00000010,
-	space = 0b00000100,
-	sharp = 0b00001000
-}				t_flags;
-
-typedef struct		s_specs
-{
-	t_flags			flag;
-	int				width;
-	int				precision;
-	char			type;
-	va_list			f_varg;
-	const char		*f_str;
-	char			*point;
-	unsigned int	full_lenth;
-}					t_specs;
-
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
 /*
-**	general prototypes
+**	expects "int nuber" and "fd"; print "number"
 */
 void				ft_putnbr_fd(int n, int fd);
+
+/*
+**	expects "char*" and "fd"; print "char**" and "\n"
+*/
 void				ft_putendl_fd(char *s, int fd);
+
+/*
+**	expects "char*" and "fd"; print "char**"
+*/
 void				ft_putstr_fd(char *s, int fd);
+
+/*
+**	set the mem "s" in "n" poz to zero
+*/
 void				ft_bzero(void *s, size_t n);
+
+/*
+**	man calloc
+*/
 void				*ft_calloc(size_t nmemb, size_t size);
+
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(const void *a, int c, size_t n);
 int					ft_isspace(char c);
 int					ft_isalnum(int c);
-int					ft_atoi(const char *np);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int n);
 int					ft_isprint(int c);
+int					ft_atoi(const char *np);
 int					ft_memcmp(const void *arr1, const void *arr2, size_t n);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
 int					ft_tolower(int c);
@@ -102,7 +83,7 @@ void				ft_putchar_fd(int c, int fd);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_itoa(int n);
 char				*ft_itoa_base(unsigned long long value,
-int base, int up_low);
+						int base, int up_low);
 char				*ft_strchr(const void *s, int c);
 int					ft_memdel(char **ptr);
 char				*ft_strdup(const char *str);
@@ -125,31 +106,10 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-void (*del)(void *));
+						void (*del)(void *));
 
 /*
 **	prototype for get_next_line
 */
 int					get_next_line(int fd, char **line);
-
-/*
-**	prototypes for ft_printf
-*/
-int					ft_printf(const char *s, ...);
-void				ft_perc_print(t_specs *stuff);
-void				ft_u_ptf_putnbr_fd(unsigned int n, int fd);
-void				ft_ptf_putnbr_fd(int n, int fd);
-void				ft_di_print(t_specs *buff);
-int					ft_print_specifier(t_specs *stuff);
-void				ft_specifier_parser(t_specs *stuff);
-void				ft_c_print(t_specs *stuff);
-void				ft_s_print(t_specs *stuff);
-int					ft_valid(char c);
-void				ft_x_print(t_specs *stuff);
-void				ft_u_print(t_specs *stuff);
-void				ft_p_print(t_specs *stuff);
-void				ft_upper_x_print(t_specs *stuff);
-void				ft_p_nu_ca(t_specs *stuff, int nl, int diff);
-void				ft_p_nu(t_specs *stuff, char *ns, int nl);
-char				*ft_point_detector(char *s);
 #endif

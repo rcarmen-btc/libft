@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:22:56 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:59 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:32:46 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d_ptr;
 	unsigned char	*s_ptr;

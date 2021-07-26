@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 14:58:26 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:30 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:27:34 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*get_res(int i, int n, int *convert, int up_low)
+static char	*get_res(int i, int n, int *convert, int up_low)
 {
 	char				*symbols;
 	char				*res;
@@ -31,7 +31,7 @@ static char		*get_res(int i, int n, int *convert, int up_low)
 	return (res);
 }
 
-static char		*zeroo(char *res)
+static char	*zeroo(char *res)
 {
 	res = (char *)malloc(sizeof(char) * (2));
 	*res = '0';
@@ -39,7 +39,7 @@ static char		*zeroo(char *res)
 	return (res);
 }
 
-char			*ft_itoa_base(unsigned long long value, int base, int up_low)
+char	*ft_itoa_base(unsigned long long value, int base, int up_low)
 {
 	unsigned long long	val_tmp;
 	int					i;

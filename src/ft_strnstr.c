@@ -6,7 +6,7 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:31:18 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:59:51 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:42:03 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ char	*ft_strnstr(const char *big, const char *lit, size_t len)
 		while (big[i] != '\0')
 		{
 			if (big[i] == lit[0] && i < len)
+			{
 				if (ft_strncmp(&big[i], &lit[0], ft_strlen(lit)) == 0)
 				{
 					if (i + ft_strlen(lit) > len)
 						return (NULL);
 					return ((char *)&big[i]);
 				}
+			}
 			i++;
 		}
 		return (NULL);

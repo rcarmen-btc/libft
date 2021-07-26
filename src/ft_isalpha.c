@@ -6,13 +6,13 @@
 /*   By: rcarmen <rcarmen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:48:38 by rcarmen           #+#    #+#             */
-/*   Updated: 2021/02/06 16:58:19 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/06/11 00:26:33 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	return (((c > 64 && c < 91) || (c > 96 && c < 123)));
+	return (((c >= 'A' && c <= 'Z') || (c > 'a' && c < 'z')));
 }
